@@ -1,0 +1,17 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "install": {
+      "path": "/tmp/devcontainer-preinstall",
+      "cmd": [
+        "RUN npm install -g @shopify/cli",
+        "RUN apt-get update && apt-get install -y curl gcc g++ make",
+        "RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -",
+        "RUN apt-get install -y nodejs",
+        "RUN curl -sL -o /etc/apt/sources.list.d/ruby.list https://apt.ruby-lang.org/pubkey.gpg",
+        "RUN apt-get update && apt-get install -y ruby-full",
+        "RUN gem install bundler" 
+      ]
+    }
+  }
+}
